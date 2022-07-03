@@ -1,0 +1,11 @@
+<%= form_with model: @user do |form| %>
+    <%= form.label :name %>
+    <%= form.text_field :name %><p>
+
+    <%= form.label :email_id %>
+    <%= form.text_field :email_id %><p>
+
+    <%= form.label :date_of_birth %>
+    <%= form.date_field :date_of_birth %><p>
+    <%= form.submit %>
+  <% end %>
