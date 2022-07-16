@@ -1,9 +1,12 @@
-<% if @user.errors.full_messages.any? %>
-  <% @user.errors.full_messages.each do |error_message| %>
-    <%= error_message if @user.errors.full_messages.first == error_message %> <br />
-  <% end %>
-<% end %>
 <%= form_with model: @user do |form| %>
+  <% if @user.errors.any? %> 
+	  <h2><%= pluralize(@user.errors.count, "error") %>The following errors prevented the article from being saved</h2> 	
+      <ul> 
+      <% @user.errors.full_messages do |msg| %> 
+	      <li><%= msg %></li> 
+	    <% end %> 
+      </ul>
+  <% end %>
     <%= form.label :name %>
     <%= form.text_field :name %><p>
 
@@ -13,4 +16,4 @@
     <%= form.label :date_of_birth %>
     <%= form.date_field :date_of_birth %><p>
     <%= form.submit %>
-  <% end %>
+<% end %>
