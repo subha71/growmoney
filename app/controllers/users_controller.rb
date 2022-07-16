@@ -16,6 +16,11 @@ class UsersController < ApplicationController
         end
     end
 
+    def show
+        @users = User.all
+    end
+    
+
 
 private
 def user_params

@@ -1,0 +1,17 @@
+<h1> Below Are the list of users registered in your portal</h1>
+<table>
+    <tr>
+        <th> Name </th>
+        <th> Email </th>
+        <th> Date Of Birth </th>
+    </tr>
+
+    <% @users.each do |user| %>
+    
+        <tr>
+            <td><%= user.name %></td>
+            <td><%= user.email_id %></td>
+            <td><%= user.date_of_birth %></td>
+        </tr>
+    <% end %>
+</table
