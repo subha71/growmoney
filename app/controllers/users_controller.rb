@@ -9,7 +9,6 @@ class UsersController < ApplicationController
 
     def create
         @user = User.new(user_params)
-        #unless @user.blank?
         unless params[:user][:name].empty? || params[:user][:date_of_birth].empty? || params[:user][:email_id].empty? 
             if @user.save
                 flash[:notice] = "Article was created successfully."
