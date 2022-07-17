@@ -8,8 +8,8 @@ class UsersController < ApplicationController
     end
 
     def create
-        @user = User.new(user_params)
-        unless params[:user][:name].empty? || params[:user][:date_of_birth].empty? || params[:user][:email_id].empty? 
+        @user = User.new(user_params) 
+        unless user_params[:name].empty? || user_params[:date_of_birth].empty? || user_params[:email_id].empty?
             if @user.save
                 flash[:notice] = "Article was created successfully."
                 redirect_to @user
