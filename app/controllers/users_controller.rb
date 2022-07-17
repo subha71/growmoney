@@ -9,11 +9,17 @@ class UsersController < ApplicationController
 
     def create
         @user = User.new(user_params)
-        if @user.save
-            flash[:notice] = "Article was created successfully."
-            redirect_to @user
+        #unless @user.blank?
+        unless params[:user][:name].empty? || params[:user][:date_of_birth].empty? || params[:user][:email_id].empty? 
+            if @user.save
+                flash[:notice] = "Article was created successfully."
+                redirect_to @user
+            else
+                flash[:error] = "Email ID already Exists"
+            redirect_to new_user_path
+            end
         else
-            flash[:error] = @user.errors.full_messages
+            flash[:error] = "All the fields are mandatory"
             redirect_to new_user_path
         end
     end
