@@ -15,5 +15,9 @@
 
     <%= form.label :date_of_birth %>
     <%= form.date_field :date_of_birth %><p>
-    <%= form.submit %>
+
+    <%= form.label :password %>
+    <%= form.text_field :password_digest %><p>
+
+    <%= form.submit 'Sign Up' %>
 <% end %>
