@@ -1,0 +1,11 @@
+<%= form_with url: login_path do |form| %>
+    
+  
+      <%= form.label :email_id %>
+      <%= form.text_field :email_id, id: 'email_id' %><p>
+  
+      <%= form.label :password %>
+      <%= form.password_field :password, id: 'password' ,autocomplete: 'off' %><p>
+  
+      <%= form.submit 'login' %>
+  <% end %>

@@ -12,6 +12,7 @@ class UsersController < ApplicationController
         @user = User.new(user_params) 
         unless user_params[:name].empty? || user_params[:date_of_birth].empty? || user_params[:email_id].empty?
             if @user.save
+                session[:user_id] = @user.id
                 flash[:notice] = "User created successfully."
                 redirect_to @user
             else
@@ -27,12 +28,16 @@ class UsersController < ApplicationController
     def show
         @users = User.all
     end
+
+    def index
+        @current_user = User.find(session[:user_id])
+    end
     
 
 
 private
 def user_params
-    params.require(:user).permit(:name, :email_id, :date_of_birth, :password_digest)
+    params.require(:user).permit(:name, :email_id, :date_of_birth, :password)
 end
 
 end

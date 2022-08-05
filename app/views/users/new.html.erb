@@ -17,7 +17,7 @@
     <%= form.date_field :date_of_birth %><p>
 
     <%= form.label :password %>
-    <%= form.text_field :password_digest %><p>
+    <%= form.text_field :password ,autocomplete: 'off' %><p>
 
     <%= form.submit 'Sign Up' %>
 <% end %>

@@ -6,4 +6,7 @@ Rails.application.routes.draw do
   # root "articles#index"
   root to: "users#home"
   resources :users
+  get 'login', to: 'sessions#new'
+  post 'login', to: 'sessions#login'
+  get 'index', to: 'users#index'
 end
