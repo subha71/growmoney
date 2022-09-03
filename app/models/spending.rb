@@ -1,6 +1,7 @@
 class Spending < ApplicationRecord
-    def new
-        @spending = Spending.new
-    end
+    belongs_to :user
+   
+
+    
     
 end

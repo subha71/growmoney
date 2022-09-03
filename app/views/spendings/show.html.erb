@@ -1,0 +1,12 @@
+<h1> Please find your below spendings </h1>
+<table>
+<tr>
+<th> <strong>Amount</strong></th>
+<th><strong>Spent_on:</strong></th></tr>
+<% @user.spendings.each do |s| %>
+  <tr>
+  <td><%= s.amount %></td>
+ <td> <%= s.spent_on %></td>
+  </tr>
+<% end %>
+</table>

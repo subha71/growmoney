@@ -1,1 +1,2 @@
 <h1>Hi <%= @current_user.name %> How are you?. Kindly create your spends or click to view your spends.</h1>
+<h5><%= link_to "Please create your transactions", new_user_spending_path(@current_user) %></h5>

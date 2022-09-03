@@ -1,0 +1,14 @@
+<%= form_with model: [ @user, @user.spendings.build ] do |form| %>
+    <p>
+      <%= form.label :amount %><br>
+      <%= form.text_field :amount %>
+    </p>
+    <p>
+      <%= form.label :spent_on %><br>
+      <%= form.text_area :spent_on %>
+    </p>
+    <p>
+      <%= form.submit %>
+    </p>
+  <% end %>
+  

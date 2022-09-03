@@ -5,7 +5,9 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
   root to: "users#home"
-  resources :users
+  resources :users do
+    resources :spendings
+  end
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#login'
   get 'index', to: 'users#index'
